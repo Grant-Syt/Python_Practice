@@ -1,0 +1,1 @@
+This repository is a collection of responses to practice coding interview questions and other various experiments written in Python.
