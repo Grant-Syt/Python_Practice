@@ -1,19 +1,12 @@
 from collections import Counter
 
 def main():
-    ops = """
-            1 5 
-            1 6 
-            3 2
-            1 10
-            1 10 
-            1 6 
-            2 5 
-            3 2 """
-    ops = ops.split()
-    ops = [[int(ops[a]), int(ops[a+1])] for a in range(0, len(ops)-1, 2)]
-    print(ops)
-    print(freqQuery(ops))
+    queries = open("input05.txt", "r")
+    queries = queries.split()[1:] # list excluding size
+    # group query pairs
+    queries = [[int(queries[a]), int(queries[a+1])] for a in range(0, len(queries)-1, 2)]
+    print(queries)
+    print(freqQuery(queries))
 
 def freqQuery(queries):
     numCount = Counter()  # count numbers

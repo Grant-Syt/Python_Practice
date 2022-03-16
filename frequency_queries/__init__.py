@@ -1,0 +1,2 @@
+from frequency_queries.frequency_queries import freqQuery
+
