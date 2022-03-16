@@ -1,12 +1,18 @@
 from collections import Counter
 
+
 def main():
-    queries = open("input05.txt", "r")
-    queries = queries.split()[1:] # list excluding size
+
+    with open("./frequency_queries/input05.txt", "r") as input_file:
+        queries = input_file.read()
+    queries = queries.split()[1:]  # list excluding size
     # group query pairs
-    queries = [[int(queries[a]), int(queries[a+1])] for a in range(0, len(queries)-1, 2)]
-    print(queries)
+    queries = [[int(queries[a]), int(queries[a+1])]
+               for a in range(0, len(queries)-1, 2)]
+    # print(queries)
+
     print(freqQuery(queries))
+
 
 def freqQuery(queries):
     numCount = Counter()  # count numbers
@@ -27,14 +33,15 @@ def freqQuery(queries):
         if op == 2:  # delete
             old_val = numCount[data]
             new_val = old_val - 1
-            if old_val > 0:
+            if old_val > 0:  # can delete
                 numCount[data] = new_val
                 # adjust val counts
                 valCount[old_val] -= 1
                 valCount[new_val] += 1
         if op == 3:  # check
-            s.append(1) if data in valCount else s.append(0)
+            s.append(1) if valCount[data] > 0 else s.append(0)
     return s
+
 
 if __name__ == "__main__":
     main()
