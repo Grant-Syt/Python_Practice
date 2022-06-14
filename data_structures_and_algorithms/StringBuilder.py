@@ -16,7 +16,7 @@ Adjust globals to alter test.
 
 # globals
 str2test = "abcdef"
-range2test = 1500000
+range2test = 500000
 
 
 class StringBuilder:
