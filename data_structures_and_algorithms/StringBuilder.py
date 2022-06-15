@@ -1,5 +1,5 @@
 from time import perf_counter
-import timeit
+from timeit import timeit
 
 """
 Cracking the Coding Interview p.90
@@ -16,7 +16,7 @@ Adjust globals to alter test.
 
 # globals
 str2test = "abcdef"
-range2test = 500000
+range2test = 1500000
 
 
 class StringBuilder:
@@ -74,10 +74,10 @@ if __name__ == "__main__":
 
     res = {}
     
-    for k, v in dict(globals()).items():
-        if k.startswith('test_'):
-            res[k] = timeit.timeit(v, number=10)
+    for name, func in dict(globals()).items():
+        if name.startswith('test_'):
+            res[name] = timeit(func, number=1)
     
-    print("\n")
-    for k, v in sorted(res.items(), key=lambda x: x[1]):
-        print('{:.5f} {}'.format(v, k))
+    print("")
+    for name, time in sorted(res.items(), key=lambda x: x[1]):
+        print('{:.5f} {}'.format(time, name))
