@@ -1,5 +1,6 @@
-from time import perf_counter
+from array import array
 from timeit import timeit
+from tests.timeTests import timeTests
 
 """
 Cracking the Coding Interview p.90
@@ -72,12 +73,14 @@ if __name__ == "__main__":
     # print(f"concatenation time: {c_time}")
     # print(f"join time: {f_time}")
 
-    res = {}
+    # res = {}
     
-    for name, func in dict(globals()).items():
-        if name.startswith('test_'):
-            res[name] = timeit(func, number=1)
+    # for name, func in dict(globals()).items():
+    #     if name.startswith('test_'):
+    #         res[name] = timeit(func, number=1)
     
-    print("")
-    for name, time in sorted(res.items(), key=lambda x: x[1]):
-        print('{:.5f} {}'.format(time, name))
+    # print("")
+    # for name, time in sorted(res.items(), key=lambda x: x[1]):
+    #     print('{:.5f} {}'.format(time, name))
+
+    timeTests(globals())
