@@ -3,8 +3,9 @@ from pprint import pprint
 
 
 def main():
-    arr = [2,3,6,1,5,4]
+    arr = [2, 3, 6, 1, 5, 4]
     allSubarry(arr)
+    print("")
     allSubsequence(arr)
 
 
@@ -16,7 +17,6 @@ def allSubarry(arr):
 
 def allSubsequence(arr):
     subseqHelper(arr, 0, [])
-
 
 
 def subseqHelper(arr, i, subarr):
