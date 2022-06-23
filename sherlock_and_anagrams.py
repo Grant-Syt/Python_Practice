@@ -4,7 +4,7 @@ from itertools import count
 
 def main():
     s = "cdcd"
-    s = "zxmcvl;asjdofiwjad.,msdj"
+    # s = "zxmcvl;asjdofiwjad.,msdj"
     print(f"My Solution: {overcounting_solution(s)}")
     print(f"Sorting Solution: {sorting_solution(s)}")
     print(f"Character Frequency Solution: {char_freq_solution(s)}")
